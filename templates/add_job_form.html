@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <!-- Main -->
+
+    <section>
+        <div class="form-container">
+            <h2>Fill a form below and add a task to your beautiful work week!</h2>
+        </div>
+        <form action="{% url 'core:save_job' %}" method="POST" id="add-job-form">
+            {% csrf_token %}
+            <b>{{ form.as_p }}</b>
+            <input class="CTA-button" type='submit' value="Add job!"></input>
+    </section>
+
+    <!-- END Main -->
+
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% load static %}  
+  
+<!-- Navbar -->
+<nav>
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{% url 'core:landing-page-view' %}"><img src='{% static "img/logo.png" %}' alt='main-logo' class="logo"></a></li>
+        <li><a href="{% url 'core:add-job-page-view' %}">Add job</a></li>
+        <li><a href="{% url 'core:week-page-view' %}">Current Week</a></li>
+        <li><a href="#">Log In/Out</a></li>
+    </ul>
+</nav>
+<!-- END Navbar -->
