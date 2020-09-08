@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.core.exceptions import ObjectDoesNotExist
+from django.views.generic import View
 from .forms import AddJobForm
-from .models import Task
+from .models import Task, UserTask
 
 # Create your views here.
 
@@ -9,17 +11,22 @@ def landing_page_view(request):
     return render(request, 'landing_page.html')
 
 
-def week_view(request):
-    context = {
-        'week_tasks': Task.objects.all(),
 
-    }
-    return render(request, 'week_page.html', context)
+class WeekView(View):
+    def get(self, *args, **kwargs):
+        user = self.request.user
+
+        context = {
+        'week_tasks': Task.objects.filter(user=user),
+        }
+
+        return render(self.request, 'week_page.html', context)
 
 
 
 def add_job_view(request):
-    form = AddJobForm(request.POST or None)
+    user = request.user
+    form = AddJobForm(request.POST or None, initial={'user': user})
     
     context = {
      
@@ -33,5 +40,14 @@ def save_job(request):
     form = AddJobForm(request.POST or None)
     if form.is_valid():
         form.save()
-    
+
     return render(request, 'job_added.html')
+
+
+class ResetTimesheet(View):
+    def get(self, *args, **kwargs):
+        user = self.request.user
+        weekly_tasks = Task.objects.filter(user=user)
+        weekly_tasks.delete()
+
+        return render(self.request, 'reset_timesheet.html')
