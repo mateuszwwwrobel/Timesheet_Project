@@ -15,10 +15,13 @@ class AddJobForm(forms.ModelForm):
             'car_reg',
         ]
 
-        labels = {
-            
-        }
-
         widgets = {
-
+            'user': forms.Select(attrs={'class': 'form-control'}),
+            'day_of_the_week': forms.Select(attrs={'class': 'form-control'}),
+            'duration': forms.NumberInput(attrs={'class': 'form-control'}),
+            'contract_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.TextInput(attrs={'class': 'form-control'}),
+            'car_reg': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+        
