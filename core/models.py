@@ -23,5 +23,10 @@ class Task(models.Model):
 
 
     def __str__(self):
-        return self.day_of_the_week + str(self.week_ending_date.strftime(" - %d-%m-%Y"))
+        return str(self.user) +' - ' + self.day_of_the_week
 
+
+
+class UserTask(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    all_tasks = models.ManyToManyField(Task)
