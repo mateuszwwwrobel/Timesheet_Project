@@ -7,4 +7,9 @@ hamburger.addEventListener('click', () => {
     links.forEach(link =>{
         link.classList.toggle('fade');
     });
-});
+}); 
+
+
+function clicked() {
+    return confirm('Another week down? Are you sure you want to reset your timesheet?');
+}

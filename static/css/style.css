@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: sans-serif;
 }
@@ -72,10 +74,46 @@ nav {
     border: solid 1px #d5160c;
 }
 
+.danger-button{
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    height: 45px;
+    width: auto;
+    color: #fff;
+    background-color: #d5160c;
+    border-radius: 10px;
+    border: solid 1px #fff;
+    cursor: pointer;
+    margin: 12px;
+    padding-right: 22px;
+    padding-left: 22px;
+}
+
+.danger-button:hover{
+    transform: scale(1.1);
+    transition: ease 0.7s;
+    color: #FFD700;
+    border: solid 1px #d5160c;
+}
+
 section{
     background: linear-gradient(#17981a, #f6bd16);
     text-align: center;
-    padding: 100px;
+    padding: 100px 20px 100px 20px;
+}
+
+section1{
+    background: linear-gradient(to right, #17981a, 90%, #fff);
+    opacity: 70%;
+    display: block;
+    padding: 5px;
+}
+
+.message-box{
+    font-family: sans-serif;
+    padding: 5px;
+    margin-left: 30px;
+    font-size: 20px;
 }
 
 .week-cart{
@@ -96,8 +134,16 @@ section{
     border-radius: 10px;;
 }
 
+.form-control{
+    margin-bottom: 10px;
+    width: 38vh;
+    display: inline-block;
+    align-items: center;
+}
+
 .form-container{
     padding: 20px;
+    
 }
 
 

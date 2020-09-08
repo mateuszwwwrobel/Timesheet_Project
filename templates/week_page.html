@@ -5,10 +5,12 @@
     <!-- Main -->
 
     <section>
+        
+        <a href="{% url 'core:reset-timesheet' %}"><button type="button" class="danger-button" onclick="return clicked();">Reset your week</button></a>
+    
         <div class="welcome-container">
             <h2>Current Week:</h2>
         </div>
-
         <div class="week-cart">
             <div class="day-cart">
                 <h2>MONDAY</h2>
@@ -96,6 +98,7 @@
                 {% endfor %}
             </div>
         </div>
+        
         
     </section>
 

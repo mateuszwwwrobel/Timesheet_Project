@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 
 {% block content %}
@@ -6,15 +7,16 @@
     <!-- Main -->
 
     <section>
-        <div class="form-container">
+        <div class="form-container" style="padding-bottom: 20px;">
             <h2>Fill a form below and add a task to your beautiful work week!</h2>
         </div>
         <form action="{% url 'core:save_job' %}" method="POST" id="add-job-form">
             {% csrf_token %}
-            <b>{{ form.as_p }}</b>
+            <b class='form-row'>{{ form|crispy }}</b>
             <input class="CTA-button" type='submit' value="Add job!"></input>
+        </form>
     </section>
-
+    
     <!-- END Main -->
 
 

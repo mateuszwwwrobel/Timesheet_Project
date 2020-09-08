@@ -3,7 +3,20 @@
 {% block content %}
 
     <!-- Main -->
+    {% if request.user.is_authenticated %}
+    <section>
+        <div class="welcome-container">
+            <h2>Hello {{ user }}! </h2>
+            <br>
+            <h3>Another busy day? Don't forget to fill in your Easy Timesheet!</h3>
+        </div>
+        <div class="buttons-container">
+            <a href="{% url 'core:add-job-page-view' %}"><button type="button" class="CTA-button">Add job</button></a>
+            <a href="{% url 'core:week-page-view' %}"><button type="button" class="CTA-button">Current week</button></a>
+        </div>
+    </section>
 
+    {% else %}
     <section>
         <div class="welcome-container">
             <h2>Welcome to The Easy Timesheet!</h2>
@@ -11,10 +24,11 @@
             <h3>Please log in or create an account to get started!</h3>
         </div>
         <div class="buttons-container">
-            <button type="button" class="CTA-button">Log In</button>
-            <button type="button" class="CTA-button">Create an account</button>
+            <a href="{% url 'account_login' %}"><button type="button" class="CTA-button">Log In</button></a>
+            <a href="{% url 'account_signup' %}"><button type="button" class="CTA-button">Create an account</button></a>
         </div>
     </section>
+    {% endif %}
 
     <!-- END Main -->
 
