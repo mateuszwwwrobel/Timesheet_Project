@@ -21,6 +21,11 @@ class WeekView(View):
         }
 
         return render(self.request, 'week_page.html', context)
+    
+    def delete_job(self):
+        user = self.request.user
+
+        
 
 
 

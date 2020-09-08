@@ -12,14 +12,28 @@ DAY_OF_THE_WEEK = (
     ('Fri', 'Friday'),
 )
 
+CARS_REG = (
+    ('SM16 SWF', 'SM16 SWF - Richards (White Toyota Hilux)'),
+    ('FL64 EBN', 'FL64 EBN - Scotts (White Toyota Hilux)'),
+    ('WG63 LVZ', 'WG63 LVZ - Volkswagen Caddy Van'),
+    ('SC16 SYZ', 'SC16 SYZ - Vauxhall Movano Flatbed Truck'),
+    ('SA13 KLJ', 'SA13 KLJ - Daniels (White Ford Ranger'),
+    ('SJ62 RMU', 'SJ62 RMU - Matts (Black Toyota Hilux'),
+    ('HG61 HGZ', 'HG61 HGZ - Tims (Blue Toyota Hilux)'),
+    ('XXX', 'XXX - Alexs (Grey Toyota Hilux)'),
+
+)
+
+
 
 class Task(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     day_of_the_week = models.CharField(max_length=3, choices=DAY_OF_THE_WEEK)
+    site_name =  models.CharField(max_length=40)
     duration = models.FloatField()
     contract_number = models.CharField(max_length=5)
     description = models.TextField()
-    car_reg = models.CharField(max_length=10, blank=True, null=True)
+    car_reg = models.CharField(max_length=20, blank=True, null=True, choices=CARS_REG)
 
 
     def __str__(self):
