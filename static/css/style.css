@@ -110,7 +110,7 @@ section1{
 }
 
 .message-box{
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 5px;
     margin-left: 30px;
     font-size: 20px;
@@ -123,16 +123,14 @@ section1{
 }
 
 .day-cart{
-    margin: 10px;
-    padding: 10px;
-
+    margin-top:20px;
 }
+
 
 .task-cart {
     padding: 7px;
     margin: 5px;
-    border: solid 1px;
-    border-radius: 10px;
+    text-align: left;
 }
 
 .form-control{
@@ -147,7 +145,26 @@ section1{
     padding: 20px;
 }
 
+.delete-job-button{
+    padding-bottom: 35px;
+}
 
+.delete-button{
+    background: #ffcc66;
+    padding: 5px 15px 5px 15px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.delete-button:hover{
+    transform: scale(1.1);
+    transition: ease 0.7s;
+}
+
+.capitalize{
+    text-transform: capitalize;
+
+}
 
 
 
@@ -175,12 +192,12 @@ section1{
 
     .nav-links {
         position: fixed;
-        background: #040303;
+        background: #605C5C;
         height: 100vh;
         width: 100%;
         flex-direction: column;
-        clip-path: circle(100px at 10% -15%);
-        -webkit-clip-path: circle(100px at 10% -15%);
+        clip-path: circle(100px at 10% -25%);
+        -webkit-clip-path: circle(100px at 10% -25%);
         transition: all 1s ease-out;
         pointer-events: none;
     }
@@ -230,6 +247,22 @@ section1{
     .week-cart{
         display: flex;
         flex-direction: column;
+        text-align: left;
+        align-items: center;
+    }
+
+    .day-cart-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .day-cart h2{
+        text-align: center;
+    }
+
+    .delete-job-button{
+        text-align: center;
+        padding-bottom: 35px;
     }
 
 }

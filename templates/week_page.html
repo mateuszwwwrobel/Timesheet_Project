@@ -4,107 +4,124 @@
 
     <!-- Main -->
 
-    <section>
-        
-        <a href="{% url 'core:reset-timesheet' %}"><button type="button" class="danger-button" onclick="return clicked();">Reset your week</button></a>
-    
+    <section>    
         <div class="welcome-container">
-            <h2>Current Week:</h2>
+            <h2>{{ user }}'s week</h2>
         </div>
         <div class="week-cart">
             <div class="day-cart">
                 <h2>MONDAY</h2>
                 {% for task in week_tasks %}
                 {% if task.day_of_the_week == 'Mon' %}
-                <div class="task-cart">
-                    <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
-                    <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
-                    <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
-                    <p class=description><b>Description:</b> {{ task.description }}</p>
-                    {% if task.car_reg %}
-                    <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
-                    {% else %}
-                    <p class="car-reg"><b>Car reg:</b> - </p>
+                    <div class="task-cart">
+                        <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
+                        <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
+                        <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
+                        <p class=description><b>Description:</b> {{ task.description }}</p>
+                        {% if task.car_reg %}
+                        <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
+                        {% else %}
+                        <p class="car-reg"><b>Car reg:</b> - </p>
+                        {% endif %}
+                    </div>
+                    <div class="delete-job-button">
+                        <a href="#">
+                            <button class='delete-button'>Delete job</button></a>
+                    </div>
                     {% endif %}
-                </div>
-                {% endif %}
-                {% endfor %}
+                    {% endfor %}
             </div>
             <div class="day-cart">
                 <h2>TUESDAY</h2>
                 {% for task in week_tasks %}
                 {% if task.day_of_the_week == 'Tue' %}
-                <div class="task-cart">
-                    <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
-                    <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
-                    <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
-                    <p class=description><b>Description:</b> {{ task.description }}</p>
-                    {% if task.car_reg %}
-                    <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
-                    {% else %}
-                    <p class="car-reg"><b>Car reg:</b> - </p>
-                    {% endif %}
-                </div>
-                {% endif %}
-                {% endfor %}
+                    <div class="task-cart">
+                        <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
+                        <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
+                        <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
+                        <p class=description><b>Description:</b> {{ task.description }}</p>
+                        {% if task.car_reg %}
+                        <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
+                        {% else %}
+                        <p class="car-reg"><b>Car reg:</b> - </p>
+                        {% endif %}
+                    </div>
+                    <div class="delete-job-button">
+                        <button class='delete-button'>Delete job</button>
+                    </div>
+                    {% endif %}   
+                    {% endfor %}
             </div>
             <div class="day-cart">
                 <h2>WEDNESDAY</h2>
                 {% for task in week_tasks %}
                 {% if task.day_of_the_week == 'Wed' %}
-                <div class="task-cart">
-                    <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
-                    <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
-                    <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
-                    <p class=description><b>Description:</b> {{ task.description }}</p>
-                    {% if task.car_reg %}
-                    <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
-                    {% else %}
-                    <p class="car-reg"><b>Car reg:</b> - </p>
+                    <div class="task-cart">
+                        <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
+                        <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
+                        <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
+                        <p class=description><b>Description:</b> {{ task.description }}</p>
+                        {% if task.car_reg %}
+                        <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
+                        {% else %}
+                        <p class="car-reg"><b>Car reg:</b> - </p>
+                        {% endif %}
+                    </div>
+                    <div class="delete-job-button">
+                        <button class='delete-button'>Delete job</button>
+                    </div>
                     {% endif %}
-                </div>
-                {% endif %}
-                {% endfor %}
+                    {% endfor %}
             </div>
             <div class="day-cart">
                 <h2>THURSDAY</h2>
                 {% for task in week_tasks %}
                 {% if task.day_of_the_week == 'Thu' %}
-                <div class="task-cart">
-                    <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
-                    <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
-                    <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
-                    <p class=description><b>Description:</b> {{ task.description }}</p>
-                    {% if task.car_reg %}
-                    <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
-                    {% else %}
-                    <p class="car-reg"><b>Car reg:</b> - </p>
+                    <div class="task-cart">
+                        <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
+                        <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
+                        <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
+                        <p class=description><b>Description:</b> {{ task.description }}</p>
+                        {% if task.car_reg %}
+                        <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
+                        {% else %}
+                        <p class="car-reg"><b>Car reg:</b> - </p>
+                        {% endif %}
+                    </div>
+                    <div class="delete-job-button">
+                        <button class='delete-button'>Delete job</button>
+                    </div>
                     {% endif %}
-                </div>
-                {% endif %}
-                {% endfor %}
+                    {% endfor %}
             </div>
             <div class="day-cart">
                 <h2>FRIDAY</h2>
                 {% for task in week_tasks %}
                 {% if task.day_of_the_week == 'Fri' %}
-                <div class="task-cart">
-                    <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
-                    <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
-                    <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
-                    <p class=description><b>Description:</b> {{ task.description }}</p>
-                    {% if task.car_reg %}
-                    <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
-                    {% else %}
-                    <p class="car-reg"><b>Car reg:</b> - </p>
+                    <div class="task-cart">
+                        <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
+                        <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
+                        <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
+                        <p class=description><b>Description:</b> {{ task.description }}</p>
+                        {% if task.car_reg %}
+                        <p class="car-reg"><b>Car reg:</b> {{ task.car_reg }}</p>
+                        {% else %}
+                        <p class="car-reg"><b>Car reg:</b> - </p>
+                        {% endif %}
+                    </div>
+                    <div class="delete-job-button">
+                        <button class='delete-button'>Delete job</button>
+                    </div>
                     {% endif %}
-                </div>
-                {% endif %}
-                {% endfor %}
+                    {% endfor %}
             </div>
         </div>
+        {% if object.duration %}
+        <p>Total hours this week: {{ object.task.duration }}</p>
         
-        
+        {% endif %}
+        <a href="{% url 'core:reset-timesheet' %}"><button type="button" class="danger-button" onclick="return clicked();">Reset your week</button></a>
+
     </section>
 
     <!-- END Main -->

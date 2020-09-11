@@ -20,8 +20,8 @@ CARS_REG = (
     ('SA13 KLJ', 'SA13 KLJ - Daniels (White Ford Ranger'),
     ('SJ62 RMU', 'SJ62 RMU - Matts (Black Toyota Hilux'),
     ('HG61 HGZ', 'HG61 HGZ - Tims (Blue Toyota Hilux)'),
-    ('XXX', 'XXX - Alexs (Grey Toyota Hilux)'),
-
+    ('SC15 MYR', 'SC15 MYR - White Land Rover Defender'),
+    ('XXXX ???', 'XXXX ??? - Alexs (Grey Toyota Hilux)'),
 )
 
 
@@ -31,7 +31,7 @@ class Task(models.Model):
     day_of_the_week = models.CharField(max_length=3, choices=DAY_OF_THE_WEEK)
     site_name =  models.CharField(max_length=40)
     duration = models.FloatField()
-    contract_number = models.CharField(max_length=5)
+    contract_number = models.CharField(max_length=5, blank=True, null=True)
     description = models.TextField()
     car_reg = models.CharField(max_length=20, blank=True, null=True, choices=CARS_REG)
 
