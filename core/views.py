@@ -31,8 +31,6 @@ class WeekView(View):
 
         
 
-
-
 def add_job_view(request):
     user = request.user
     form = AddJobForm(request.POST or None, initial={'user': user})
@@ -57,23 +55,27 @@ class ResetTimesheet(View):
     def get(self, *args, **kwargs):
         user = self.request.user
         weekly_tasks = Task.objects.filter(user=user)
+        full_tasks = UserTask(weekly_tasks)
+        
+        print(full_tasks)
         weekly_tasks.delete()
 
         return render(self.request, 'reset_timesheet.html')
 
+    
 
 @login_required
 def delete_single_job_from_week(request):
     user = request.user
 
     try: 
-        deleted_job = Task.objects.get(id=50)
-    
-
-        return render(request, 'week_page.html')
+        deleted_job = Task.objects.get(user=user)
+        deleted_job.delete()
+        return redirect('core:week-page-view')
 
     except ObjectDoesNotExist:
-        return redirect('core:week-page-view', context)
+
+        return redirect('core:week-page-view')
 
 
 @login_required
@@ -87,8 +89,4 @@ def total_hours(request):
         return total_h
     except ObjectDoesNotExist:
         return redirect('core:week-page-view') 
-    
-
-    
-
     

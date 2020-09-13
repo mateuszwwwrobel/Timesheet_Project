@@ -42,5 +42,4 @@ class Task(models.Model):
 
 
 class UserTask(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    all_tasks = models.ManyToManyField(Task)
+    all_tasks = models.ForeignKey(Task, on_delete=models.CASCADE)
