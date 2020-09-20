@@ -31,8 +31,8 @@
                             <input class="delete-button" type="submit" value="Delete job">
                         </form>
                     </div>
-                    {% endif %}
-                    {% endfor %}
+                {% endif %}
+                {% endfor %}
             </div>
             <div class="day-cart">
                 <h2>TUESDAY</h2>
@@ -56,8 +56,8 @@
                             <input class="delete-button" type="submit" value="Delete job">
                         </form>
                     </div>
-                    {% endif %}   
-                    {% endfor %}
+                {% endif %}   
+                {% endfor %}
             </div>
             <div class="day-cart">
                 <h2>WEDNESDAY</h2>
@@ -81,8 +81,8 @@
                             <input class="delete-button" type="submit" value="Delete job">
                         </form>
                     </div>
-                    {% endif %}
-                    {% endfor %}
+                {% endif %}
+                {% endfor %}
             </div>
             <div class="day-cart">
                 <h2>THURSDAY</h2>
@@ -106,8 +106,8 @@
                             <input class="delete-button" type="submit" value="Delete job">
                         </form>
                     </div>
-                    {% endif %}
-                    {% endfor %}
+                {% endif %}
+                {% endfor %}
             </div>
             <div class="day-cart">
                 <h2>FRIDAY</h2>
@@ -131,12 +131,12 @@
                             <input class="delete-button" type="submit" value="Delete job">
                         </form>
                     </div>
-                    {% endif %}
-                    {% endfor %}
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
-        {% if object.duration %}
-        <p>Total hours this week: {{ object.task.duration }}</p>
+        {% if total_hours %}
+        <p>Total hours this week: {{ total_hours }}h</p>
         
         {% endif %}
         <a href="{% url 'core:reset-timesheet' %}"><button type="button" class="danger-button" onclick="return clicked();">Reset your week</button></a>

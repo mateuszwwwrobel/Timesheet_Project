@@ -27,8 +27,9 @@ class WeekView(View):
         
         context = {
         'week_tasks': Task.objects.filter(user=user),
+        'total_hours': Task.objects.filter(user=user).aggregate(Sum('duration'))['duration__sum'],
         }
-                
+
         return render(self.request, 'week_page.html', context)
 
         
