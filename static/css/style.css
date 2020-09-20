@@ -135,11 +135,10 @@ section1{
 
 .form-control{
     margin-bottom: 10px;
-    width: 38vh;
     display: inline-block;
     align-items: center;
-    
 }
+
 
 .form-container{
     padding: 20px;
@@ -163,9 +162,7 @@ section1{
 
 .capitalize{
     text-transform: capitalize;
-
 }
-
 
 
 @media screen and (max-width: 800px) {

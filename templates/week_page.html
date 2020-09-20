@@ -12,8 +12,9 @@
             <div class="day-cart">
                 <h2>MONDAY</h2>
                 {% for task in week_tasks %}
-                {% if task.day_of_the_week == 'Mon' %}
+                {% if task.date.isoweekday == 1 %}
                     <div class="task-cart">
+                        <p class="contract-number"><b></b> {{ task.date|date:"d N Y" }}</p>
                         <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
                         <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
                         <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
@@ -25,8 +26,10 @@
                         {% endif %}
                     </div>
                     <div class="delete-job-button">
-                        <a href="#">
-                            <button class='delete-button'>Delete job</button></a>
+                         <form action="{% url 'core:delete-task' task.id %}" method="post">
+                            {% csrf_token %}
+                            <input class="delete-button" type="submit" value="Delete job">
+                        </form>
                     </div>
                     {% endif %}
                     {% endfor %}
@@ -34,8 +37,9 @@
             <div class="day-cart">
                 <h2>TUESDAY</h2>
                 {% for task in week_tasks %}
-                {% if task.day_of_the_week == 'Tue' %}
+                {% if task.date.isoweekday == 2 %}
                     <div class="task-cart">
+                        <p class="contract-number"><b></b> {{ task.date|date:"d N Y" }}</p>
                         <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
                         <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
                         <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
@@ -47,7 +51,10 @@
                         {% endif %}
                     </div>
                     <div class="delete-job-button">
-                        <button class='delete-button'>Delete job</button>
+                        <form action="{% url 'core:delete-task' task.id %}" method="post">
+                            {% csrf_token %}
+                            <input class="delete-button" type="submit" value="Delete job">
+                        </form>
                     </div>
                     {% endif %}   
                     {% endfor %}
@@ -55,8 +62,9 @@
             <div class="day-cart">
                 <h2>WEDNESDAY</h2>
                 {% for task in week_tasks %}
-                {% if task.day_of_the_week == 'Wed' %}
+                {% if task.date.isoweekday == 3 %}
                     <div class="task-cart">
+                        <p class="contract-number"><b></b> {{ task.date|date:"d N Y" }}</p>
                         <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
                         <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
                         <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
@@ -68,7 +76,10 @@
                         {% endif %}
                     </div>
                     <div class="delete-job-button">
-                        <button class='delete-button'>Delete job</button>
+                        <form action="{% url 'core:delete-task' task.id %}" method="post">
+                            {% csrf_token %}
+                            <input class="delete-button" type="submit" value="Delete job">
+                        </form>
                     </div>
                     {% endif %}
                     {% endfor %}
@@ -76,8 +87,9 @@
             <div class="day-cart">
                 <h2>THURSDAY</h2>
                 {% for task in week_tasks %}
-                {% if task.day_of_the_week == 'Thu' %}
+                {% if task.date.isoweekday == 4 %}
                     <div class="task-cart">
+                        <p class="contract-number"><b></b> {{ task.date|date:"d N Y" }}</p>
                         <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
                         <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
                         <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
@@ -89,7 +101,10 @@
                         {% endif %}
                     </div>
                     <div class="delete-job-button">
-                        <button class='delete-button'>Delete job</button>
+                        <form action="{% url 'core:delete-task' task.id %}" method="post">
+                            {% csrf_token %}
+                            <input class="delete-button" type="submit" value="Delete job">
+                        </form>
                     </div>
                     {% endif %}
                     {% endfor %}
@@ -97,8 +112,9 @@
             <div class="day-cart">
                 <h2>FRIDAY</h2>
                 {% for task in week_tasks %}
-                {% if task.day_of_the_week == 'Fri' %}
+                {% if task.date.isoweekday == 5 %}
                     <div class="task-cart">
+                        <p class="contract-number"><b></b> {{ task.date|date:"d N Y" }}</p>
                         <p class="contract-number"><b>Site name:</b> {{ task.site_name }}</p>
                         <p class="contract-number"><b>Contract number:</b> {{ task.contract_number }}</p>
                         <p class="duration"><b>Duration:</b> {{ task.duration }}h</p>
@@ -110,7 +126,10 @@
                         {% endif %}
                     </div>
                     <div class="delete-job-button">
-                        <button class='delete-button'>Delete job</button>
+                        <form action="{% url 'core:delete-task' task.id %}" method="post">
+                            {% csrf_token %}
+                            <input class="delete-button" type="submit" value="Delete job">
+                        </form>
                     </div>
                     {% endif %}
                     {% endfor %}
@@ -121,6 +140,9 @@
         
         {% endif %}
         <a href="{% url 'core:reset-timesheet' %}"><button type="button" class="danger-button" onclick="return clicked();">Reset your week</button></a>
+        <a href="{% url 'core:export-to-file' %}"><button type="button" class="danger-button">Generate a PDF</button></a>
+        
+
 
     </section>
 
