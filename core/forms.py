@@ -8,7 +8,7 @@ class AddJobForm(forms.ModelForm):
         model = Task
         fields = [
             'user',
-            'day_of_the_week',
+            'date',
             'site_name',
             'contract_number',
             'duration',
@@ -17,8 +17,8 @@ class AddJobForm(forms.ModelForm):
         ]
 
         widgets = {
-            'user': forms.Select(attrs={'class': 'form-control'}),
-            'day_of_the_week': forms.Select(attrs={'class': 'form-control'}),
+            'user': forms.HiddenInput(attrs={'class': 'form-control small-tab'}),
+            'date': forms.SelectDateWidget(attrs={'class': 'form-control'}),
             'site_name': forms.TextInput(attrs={'class': 'form-control'}),
             'contract_number': forms.TextInput(attrs={'class': 'form-control'}),
             'duration': forms.NumberInput(attrs={'class': 'form-control'}),
