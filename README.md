@@ -1,6 +1,6 @@
 # Timesheet_Project
 
-### This is a app create for my colleagues at work to make their timesheet easier for a week. 
+### This app allow users to create task during a week to keep track of them during a week. 
 ### All the tasks for a current week are store in database and you can reset it at anytime.
 
 ## Technologies
